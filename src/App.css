@@ -1,1 +1,9 @@
-@import "tailwindcss";
+ul{
+    background-color: cadetblue;
+    padding: 30px 0 ;
+}
+
+li{
+    margin-bottom: 20px;
+    text-align: center;
+}

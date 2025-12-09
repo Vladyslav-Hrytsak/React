@@ -1,13 +1,28 @@
 import './App.css'
 
-function App() {
+const coursesTitleArray:string[] = [
+    'JavaScript Complex',
+    'Java Complex',
+    'Python Complex',
+    'QA Complex',
+    'Fullstack',
+    'Frontend'
+];
 
-  return (
-    <>
+
+const App = () => {
+
+    return (
+        <>
+            <ul>
+                {
+                    coursesTitleArray.map((course:string, index:number ) => <li key={index}>{course}</li>)
+                }
+            </ul>
 
 
-    </>
-  )
+        </>
+    )
 }
 
 export default App
