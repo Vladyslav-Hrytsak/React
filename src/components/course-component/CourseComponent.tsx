@@ -6,6 +6,7 @@ type PropsType = {
     course: CourseModel;
 };
 
+
 export const CourseComponent: FC<PropsType> = ({ course }) => {
     return (
         <li>{course.title} - {course.monthDuration}</li>
