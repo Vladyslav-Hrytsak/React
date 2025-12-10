@@ -21,4 +21,5 @@ export const CourseComponent = () => {
     );
 };
 
+
 export default CourseComponent;
