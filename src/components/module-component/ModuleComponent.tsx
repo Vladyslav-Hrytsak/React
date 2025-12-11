@@ -1,19 +1,17 @@
-import type { CoursesType } from "../../models/CoursesModel.ts";
+import type {FC} from "react";
 
-interface ModuleComponentProps {
-    item: CoursesType
+type ModuleProps = {
+    modules: string[];
 }
 
-export const ModuleComponent = ({ item }: ModuleComponentProps) => {
+const ModuleComponent: FC<ModuleProps> = ({modules}) => {
     return (
-        <div className='border'>
-            {
-                item.modules.map((module, index) => (
-                    <div key={index} >
-                        <p className= 'font-extrabold'>{module}</p>
-                    </div>
-                ))
-            }
+        <div className="border p-3 mt-3 rounded">
+            {modules.map((module, index) => (
+                <p key={index} className="font-extrabold">
+                    {module}
+                </p>
+            ))}
         </div>
     );
 };

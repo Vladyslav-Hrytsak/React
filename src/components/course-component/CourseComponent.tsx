@@ -1,25 +1,22 @@
-import {coursesArray} from "../../data/data.ts";
+import type {FC} from "react";
+import type {CoursesType} from "../../models/CoursesModel.ts";
 import ModuleComponent from "../module-component/ModuleComponent.tsx";
 
-export const CourseComponent = () => {
+type CourseProps = {
+    course: CoursesType
+}
+
+const CourseComponent: FC<CourseProps> = ({course}) => {
     return (
-        <div>
-            {
-                coursesArray.map((course, index) => (
-                    <div key={index} className='border-2 m-3.5 text-center bg-blue-100'>
-                        <h2 className= 'font-mono font-extrabold text-4xl'>{course.title}</h2>
-                        <p className= 'font-serif'>{course.monthDuration} month,  {course.hourDuration} hour</p>
-                        <div>
-                            {
-                                <ModuleComponent item = {course} />
-                            }
-                        </div>
-                    </div>
-                ))
-            }
+        <div className="border-2 m-4 p-4 text-center bg-blue-100 rounded-lg">
+            <h2 className="font-mono font-extrabold text-4xl">{course.title}</h2>
+
+            <p className="font-serif">
+                {course.monthDuration} month, {course.hourDuration} hour
+            </p>
+            <ModuleComponent modules={course.modules} />
         </div>
     );
 };
-
 
 export default CourseComponent;
