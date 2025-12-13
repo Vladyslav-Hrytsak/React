@@ -1,12 +1,12 @@
 import {useEffect, useState} from "react";
-import {loadTodos} from "../../service/todos.service.ts";
+import {loadTodosDummyjson} from "../../service/todos.service.ts";
 import type {ITodo} from "../../models/Todo.ts";
 import TodoComponent from "../todo-component/TodoComponent.tsx";
 
 const TodosComponent = () => {
     const [todos, setTodos] = useState<ITodo[]>([])
     useEffect(() => {
-        loadTodos().then(
+        loadTodosDummyjson().then(
             val => setTodos(val),
         )
     }, []);
