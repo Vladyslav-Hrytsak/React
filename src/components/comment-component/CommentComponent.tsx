@@ -7,7 +7,7 @@ interface CommentComponentProps {
 
 const CommentComponent:FC<CommentComponentProps> = ({item}: CommentComponentProps) => {
     return (
-        <div key={item.id} className='bg-red-300 border-2 m-2 p-2 w-3/4 mx-auto text-center'>
+        <div className='bg-red-300 border-2 m-2 p-2 w-3/4 mx-auto text-center'>
             <h2>{item.postId}, {item.name}</h2>
             <p>{item.body}</p>
         </div>
