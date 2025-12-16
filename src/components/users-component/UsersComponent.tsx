@@ -3,7 +3,7 @@ import {servises} from "../../services/api.service.ts";
 import type {IUser} from "../../models/UserModel.ts";
 import UserComponent from "../user-component/UserComponent.tsx";
 
-const UsersComment = () => {
+const UsersComponent = () => {
 
     const [users, setUsers] = useState<IUser[]>([]);
     useEffect(() => {
@@ -21,4 +21,4 @@ const UsersComment = () => {
     );
 };
 
-export default UsersComment;
+export default UsersComponent;

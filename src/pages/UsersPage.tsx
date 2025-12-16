@@ -1,9 +1,9 @@
-import UsersComment from "../components/users-component/UsersComment.tsx";
+import UsersComponent from "../components/users-component/UsersComponent.tsx";
 
 const UsersPage = () => {
     return (
         <div>
-            <UsersComment/>
+            <UsersComponent/>
         </div>
     );
 };

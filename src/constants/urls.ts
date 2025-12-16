@@ -8,6 +8,13 @@ export const urls = {
             return `${baseUrl}/${id}`
         }
     },
-    posts:{}
+
+    posts:{
+        postsUrl: `${baseUrl}/posts`
+    },
+
+    comments:{
+        commentsUrl: `${baseUrl}/comments`
+    }
 
 }
