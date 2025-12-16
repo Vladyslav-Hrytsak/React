@@ -1,7 +1,6 @@
 import {type FC, useEffect, useState} from "react";
 import {servises} from "../../services/api.service.ts";
 import type {IPost} from "../../models/PostModel.ts";
-import PostComponent from "../post-component/PostComponent.tsx";
 
 
 type PostTypeProps = {
@@ -23,8 +22,9 @@ const PostsComponent:FC<PostTypeProps> = ({userId}) => {
     return (
         <div className="max-w-2xl mx-auto">
             {
-                posts.map((post) => (<PostComponent key={post.id} item = {post} />))
+                posts.map((post) => (<div>{post.title}</div>))
             }
+            {/*<PostComponent key={post.id} item = {post} />*/}
         </div>
     );
 };

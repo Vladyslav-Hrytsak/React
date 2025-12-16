@@ -12,7 +12,7 @@ export const urls = {
     posts:{
         postsUrl: `${baseUrl}/posts`,
         postById: (id:number) =>{return `${baseUrl}/${id}`},
-        userPostbyId: (id:number) =>{return `${baseUrl}/posts?UserId=${id}`}
+        userPostbyId: (id:number) =>{return `${baseUrl}/posts?гserId=${id}`}
     },
 
     comments:{

@@ -10,7 +10,7 @@ const UserComponent: FC<UserComponentProps> = ({ item }) => {
 
     const navigate = useNavigate()
     const hendlOnClick =() =>{
-        navigate('posts/' +item.id ,{state: item})
+        navigate('post/' +item.id ,{state: item})
     }
     return (
         <div className="border rounded-xl p-4 mb-4 bg-white">
