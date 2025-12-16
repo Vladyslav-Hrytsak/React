@@ -1,16 +1,24 @@
-import {useEffect, useState} from "react";
+import {type FC, useEffect, useState} from "react";
 import {servises} from "../../services/api.service.ts";
 import type {IPost} from "../../models/PostModel.ts";
 import PostComponent from "../post-component/PostComponent.tsx";
 
-const PostsComponent = () => {
+
+type PostTypeProps = {
+    userId: string;
+}
+
+const PostsComponent:FC<PostTypeProps> = ({userId}) => {
 
     const [posts, setPosts] = useState<IPost[]>([]);
     useEffect(() => {
-        servises.getPosts().then(
-            (posts) => setPosts(posts),
-        )
-    },[])
+        if (userId){
+            servises.getPostsOfUsersById(+userId).then(
+                (posts) => setPosts(posts),
+            )
+        }
+    },[userId])
+
 
     return (
         <div className="max-w-2xl mx-auto">

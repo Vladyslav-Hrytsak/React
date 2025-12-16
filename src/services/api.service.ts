@@ -17,6 +17,11 @@ export const servises = {
     getComments: async ():Promise<IComment[]> =>{
         return await fetch(urls.comments.commentsUrl)
             .then((response) => response.json())
+    },
+
+    getPostsOfUsersById: async (id:number):Promise<IPost[]> =>{
+        return await fetch(urls.posts.userPostbyId(id))
+            .then((response) => response.json())
     }
 
 }
