@@ -1,11 +1,13 @@
 import './App.css'
-import PostsComponent from "./components/posts-component/PostsComponent.tsx";
+import MenuComponent from "./components/menu/MenuComponent.tsx";
+import {Outlet} from "react-router-dom";
 
 function App() {
 
   return (
     <>
-        <PostsComponent/>
+        <MenuComponent/>
+        <Outlet/>
     </>
   )
 }
