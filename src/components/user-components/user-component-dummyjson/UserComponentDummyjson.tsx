@@ -1,0 +1,11 @@
+
+const UserComponentDummyjson = () => {
+    return (
+        <div className="mx-auto w-fit p-8 bg-gray-100 border rounded-xl">
+            User dummyjson
+
+        </div>
+    );
+};
+
+export default UserComponentDummyjson;
