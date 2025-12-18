@@ -1,5 +1,5 @@
 import type {IUserJsonplaceholder} from "../models/model-jsonplaceholder/IUser/IUser.ts";
-import {urlsJsonplaceholder} from "../constants/urls.ts";
+import {urlsDummyjson, urlsJsonplaceholder} from "../constants/urls.ts";
 import type {IPostJsonplaceholder} from "../models/model-jsonplaceholder/IPost.ts";
 import type {ICommentJsonplaceholder} from "../models/model-jsonplaceholder/IComment.ts";
 
@@ -29,19 +29,19 @@ export const services = {
     serviseDummyjson: {
 
         getUsersDummyjson: async ():Promise<IUserDummyjson[]> =>{
-            const response = await fetch(urlsJsonplaceholder.users.usersUrl)
+            const response = await fetch(urlsDummyjson.users.usersUrl)
                 .then((response) => response.json())
             return response.users
         },
 
         getPostsDummyjson: async ():Promise<IPostDummyjson[]> =>{
-            const response = await fetch(urlsJsonplaceholder.users.usersUrl)
+            const response = await fetch(urlsDummyjson.posts.postsUrl)
                 .then((response) => response.json())
             return response.posts
         },
 
         getCommentsDummyjson: async ():Promise<ICommentDummyjson[]> =>{
-            const response = await fetch(urlsJsonplaceholder.users.usersUrl)
+            const response = await fetch(urlsDummyjson.comments.commentsUrl)
                 .then((response) => response.json())
             return response.comments
         }
