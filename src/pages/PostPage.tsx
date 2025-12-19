@@ -1,14 +1,14 @@
 import {Link, Outlet} from "react-router-dom";
 
-const CommentComponent = () => {
+const PostPage = () => {
     return (
         <div>
             <ul>
                 <li>
-                    <Link to="jsonplaceholder">Comments jsonplaceholder</Link>
+                    <Link to="jsonplaceholder">Post jsonplaceholder</Link>
                 </li>
                 <li>
-                    <Link to="dummyjson">Comment dummyjson</Link>
+                    <Link to="dummyjson">Post dummyjson</Link>
                 </li>
             </ul>
             <Outlet/>
@@ -17,4 +17,4 @@ const CommentComponent = () => {
     );
 };
 
-export default CommentComponent;
+export default PostPage;

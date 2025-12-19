@@ -1,14 +1,14 @@
 import {Link, Outlet} from "react-router-dom";
 
-const PostComponent = () => {
+const UserPage = () => {
     return (
         <div>
             <ul>
                 <li>
-                    <Link to="jsonplaceholder">Post jsonplaceholder</Link>
+                    <Link to="jsonplaceholder">Users jsonplaceholder</Link>
                 </li>
                 <li>
-                    <Link to="dummyjson">Post dummyjson</Link>
+                    <Link to="dummyjson">Users dummyjson</Link>
                 </li>
             </ul>
             <Outlet/>
@@ -17,4 +17,4 @@ const PostComponent = () => {
     );
 };
 
-export default PostComponent;
+export default UserPage;
