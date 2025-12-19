@@ -1,8 +1,9 @@
 import {Outlet} from "react-router";
+import MenuComponent from "../component/menu/MenuComponent.tsx";
 
 const MainLayout = () => {
     return <>
-        main layout
+        <MenuComponent/>
         <Outlet/>
     </>
 
