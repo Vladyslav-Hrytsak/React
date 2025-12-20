@@ -1,10 +1,10 @@
 import {Outlet} from "react-router";
-import UsersComponent from "../components/users-component/UsersComponent.tsx";
+import UsersPage from "../pages/UsersPage.tsx";
 
 const MainLayout = () => {
     return (
         <div>
-            <UsersComponent/>
+            <UsersPage/>
             <Outlet/>
         </div>
     );

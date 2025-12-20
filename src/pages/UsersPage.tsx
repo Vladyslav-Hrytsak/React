@@ -5,12 +5,15 @@ const UsersPage = () => {
     return (
         <div>
             <hr/>
-            <Outlet/>
+            <Outlet />
             <hr/>
-            <UsersComponent/>
+
+            <UsersComponent />
+
 
         </div>
     );
 };
+
 
 export default UsersPage;

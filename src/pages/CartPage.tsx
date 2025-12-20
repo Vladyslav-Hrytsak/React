@@ -1,6 +1,5 @@
-function CartsComponent() {
-    return null;
-}
+import CartsComponent from "../components/carts-component/CartsComponent.tsx";
+
 
 const CartPage = () => {
     return (
@@ -9,5 +8,6 @@ const CartPage = () => {
         </div>
     );
 };
+
 
 export default CartPage;

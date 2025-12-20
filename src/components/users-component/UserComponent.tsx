@@ -1,16 +1,16 @@
 import type { IUser } from "../../models/IUser";
 import {type FC} from "react";
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router-dom";
 
 interface UserComponentProps {
     user: IUser;
 }
 
 const UserComponent: FC<UserComponentProps> = ({ user }) => {
-    const navigateion = useNavigate()
+    const navigation = useNavigate()
 
     const onButtonClickNavigate = () =>{
-        navigateion('/users/'+user.id+'/carts')
+        navigation('/users/'+user.id+'/carts')
     }
 
     return (
