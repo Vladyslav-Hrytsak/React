@@ -10,8 +10,10 @@ const CartsComponent = () => {
 
     const [carts, setCarts] = useState<ICart[]>([]);
     useEffect(() => {
-    cartService.getCartsOfUsers(cart.id)
+    if(id){
+        cartService.getCartsOfUsers(id)
             .then(({carts}:ICartResponceModel) => setCarts(carts));
+    }
     }, [id]);
 
     return (

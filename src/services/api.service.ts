@@ -14,7 +14,7 @@ export const userService = {
 export const cartService = {
 
     getCartsOfUsers: async (id:string):Promise<ICartResponceModel> => {
-        return await fetch(url+'/users')
+        return await fetch(url+'/cartst/users'+id)
             .then(res => res.json())
     }
 }
