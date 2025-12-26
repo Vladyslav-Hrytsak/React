@@ -1,7 +1,9 @@
+import CarsCreateComponent from "../comonents/cars-create-component/CarsCreateComponent.tsx";
+
 const CarsFormPage = () => {
     return (
         <div>
-            <CarsFormComponent/>
+            <CarsCreateComponent/>
         </div>
     );
 };
