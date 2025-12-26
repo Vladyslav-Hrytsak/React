@@ -12,6 +12,7 @@ const FormComponent = () => {
     const {register, handleSubmit, formState: { errors , isValid}
     } = useForm<FormData>(
         {
+
             mode: "all",
             resolver: joiResolver(userValidator)
         }
