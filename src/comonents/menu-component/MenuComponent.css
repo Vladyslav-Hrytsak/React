@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: black solid 1px;
+    padding: 40px 0;
+    background-color: lightblue;
+}
