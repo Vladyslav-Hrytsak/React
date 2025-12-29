@@ -1,28 +1,46 @@
 import {useForm} from "react-hook-form";
 import type {IFormData} from "../../models/IFormData.ts";
+import {joiResolver} from "@hookform/resolvers/joi";
+import {userValidator} from "../../validator/user.validator.ts";
+import {login} from "../../services/api.service.ts";
+
 
 const FormComponent = () => {
 
-    const {handleSubmit, register, formState: { errors , isValid}}} = useForm<IFormData>()
+    const {register, handleSubmit, formState: { errors , isValid}} = useForm<IFormData>(
+        {
+            mode: "all",
+            resolver: joiResolver(userValidator)
+        }
+    );
 
     const submit = (data:IFormData) => {
-        addCar(data)
+        console.log(data);
+            login(data)
     };
+
+
 
     return (
         <div className="min-h-screen flex justify-center items-center">
-            <form>
-                <label>
-                    <input type="text" name="username" placeholder="Username" className="border px-2 py-1 w-64"/>
-                </label>
+            <form onSubmit={handleSubmit(submit)}>
 
-                <label>
-                    <input type="text" name="password" placeholder="Password" className="border px-2 py-1 w-64"/>
-                </label>
+                <div className="mb-3">
+                    <input type="text" placeholder="Username"{...register('username')} className="border px-2 py-1 w-64"/>
+                    <div className="text-red-500 text-sm">
+                        {errors.username?.message}</div>
+                </div>
 
-                <button className="border px-4 py-1 w-64" type={"submit"}>LOGIN</button>
+                <div className="mb-3">
+                    <input type="text" placeholder="Password"{...register('password')} className="border px-2 py-1 w-64"/>
+                    <div className="text-red-500 text-sm">
+                        {errors.password?.message}</div>
+                </div>
+
+                <button type="submit" disabled={!isValid} className="border px-4 py-1 w-64">Login</button>
             </form>
         </div>
+
     );
 };
 

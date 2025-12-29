@@ -5,7 +5,7 @@ import AuthResourcesPage from "../pages/AuthResourcesPage.tsx";
 import HomePage from "../pages/HomePage.tsx";
 
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter([ // створено структуру роутів
     { path: '/', element: <MainLayout/>, children:[
             {index: true, element: <HomePage/>},
             {path:'login', element: <LoginPage/>},

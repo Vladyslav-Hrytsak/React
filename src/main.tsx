@@ -3,4 +3,4 @@ import './index.css'
 import {RouterProvider} from "react-router/dom";
 import {router} from "./routers/router.tsx";
 
-createRoot(document.getElementById('root')!).render(<RouterProvider router={router}/>)
+createRoot(document.getElementById('root')!).render(<RouterProvider router={router}/>)//підключаю роути

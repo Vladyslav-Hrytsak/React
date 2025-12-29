@@ -1,6 +1,7 @@
-export interface IUserWithModel {
+export interface IUserWithToken {
     id: number
     username: string
+    password: string
     email: string
     firstName: string
     lastName: string
