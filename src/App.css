@@ -1,0 +1,15 @@
+.light{
+    background-color: whitesmoke;
+}
+
+.dark{
+    background-color: midnightblue;
+}
+div{
+    width: 100%;
+}
+button{
+    margin: 400px 0;
+    justify-content: center;
+    align-items: center;
+}
