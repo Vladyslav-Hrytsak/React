@@ -1,30 +1,30 @@
-import {type FC, useEffect, useState} from "react";
+import { useEffect} from "react";
 import {servises} from "../../services/api.service.ts";
-import type {IPost} from "../../models/PostModel.ts";
+import PostComponent from "../post-component/PostComponent.tsx";
+import {useAppSelector} from "../../redux/hooks/useAppSelector.tsx";
+import {postsSliceActions} from "../../redux/slices/postSlice.ts";
+import {useAppDispatch} from "../../redux/hooks/useAppDispatch.tsx";
 
 
-type PostTypeProps = {
-    userId: string;
-}
+const PostsComponent= () => {
 
-const PostsComponent:FC<PostTypeProps> = ({userId}) => {
+    const {posts} = useAppSelector(({postsSlice}) => postsSlice);
+    const dispatch = useAppDispatch();
 
-    const [posts, setPosts] = useState<IPost[]>([]);
     useEffect(() => {
-        if (userId){
-            servises.getPostsOfUsersById(+userId).then(
-                (posts) => setPosts(posts),
+        servises.getPosts().then(
+                (posts) => {
+                    dispatch(postsSliceActions.loadPosts(posts));
+                }
             )
-        }
-    },[userId])
+    },[])
 
 
     return (
         <div className="max-w-2xl mx-auto">
             {
-                posts.map((post) => (<div>{post.title}</div>))
+                posts.map((post) => <PostComponent key={post.id} item = {post} />)
             }
-            {/*<PostComponent key={post.id} item = {post} />*/}
         </div>
     );
 };
