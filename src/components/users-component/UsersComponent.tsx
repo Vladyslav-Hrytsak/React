@@ -1,21 +1,17 @@
 import UserComponent from "../user-component/UserComponent.tsx";
 import {useEffect} from "react";
-import {servises} from "../../services/api.service.ts";
 import {useAppSelector} from "../../redux/hooks/useAppSelector.tsx";
-import {usersSliceActions} from "../../redux/slices/userSlice.ts";
 import {useAppDispatch} from "../../redux/hooks/useAppDispatch.tsx";
+import {usersSliceActions} from "../../redux/slices/userSlice.ts";
 
 const UsersComponent = () => {
 
     const {users} = useAppSelector(({usersSlice}) => usersSlice)
     const dispatch = useAppDispatch();
 
+
     useEffect(() => {
-        servises.getUsers().then(
-            (users) =>{
-                dispatch(usersSliceActions.loadUsers(users));
-            }
-        )
+        dispatch(usersSliceActions.loadUsers())
     },[])
 
     return (
