@@ -1,22 +1,18 @@
 const baseUrl = 'https://jsonplaceholder.typicode.com'
 
 export const urls = {
-    users:{
+    users: {
         usersUrl: `${baseUrl}/users`,
-
-        userById: (id:number) =>{
-            return `${baseUrl}/${id}`
-        }
+        userById: (id: string) => `${baseUrl}/users/${id}`
     },
 
-    posts:{
+    posts: {
         postsUrl: `${baseUrl}/posts`,
-        postById: (id:number) =>{return `${baseUrl}/${id}`},
-        userPostbyId: (id:number) =>{return `${baseUrl}/posts?гserId=${id}`}
+        postById: (id: number) => `${baseUrl}/posts/${id}`,
+        userPostbyId: (id: number) => `${baseUrl}/posts?userId=${id}`
     },
 
-    comments:{
+    comments: {
         commentsUrl: `${baseUrl}/comments`
     }
-
 }

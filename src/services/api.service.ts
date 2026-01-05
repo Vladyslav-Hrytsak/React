@@ -9,6 +9,12 @@ export const servises = {
         return await fetch(urls.users.usersUrl)
             .then((response) => response.json())
     },
+
+    getUserById: async (id:string):Promise<IUser> =>{
+        return await fetch(urls.users.userById(id))
+            .then((response) => response.json())
+    },
+
     getPosts: async ():Promise<IPost[]> =>{
         return await fetch(urls.posts.postsUrl)
             .then((response) => response.json())

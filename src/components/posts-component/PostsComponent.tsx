@@ -1,5 +1,4 @@
 import { useEffect} from "react";
-import {servises} from "../../services/api.service.ts";
 import PostComponent from "../post-component/PostComponent.tsx";
 import {useAppSelector} from "../../redux/hooks/useAppSelector.tsx";
 import {postsSliceActions} from "../../redux/slices/postSlice.ts";
@@ -12,11 +11,7 @@ const PostsComponent= () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        servises.getPosts().then(
-                (posts) => {
-                    dispatch(postsSliceActions.loadPosts(posts));
-                }
-            )
+        dispatch(postsSliceActions.loadPosts())
     },[])
 
 
