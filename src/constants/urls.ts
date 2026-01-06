@@ -8,8 +8,8 @@ export const urls = {
 
     posts: {
         postsUrl: `${baseUrl}/posts`,
-        postById: (id: number) => `${baseUrl}/posts/${id}`,
-        userPostbyId: (id: number) => `${baseUrl}/posts?userId=${id}`
+        postById: (id: string) => `${baseUrl}/posts/${id}`,
+        userPostById: (id: string) => `${baseUrl}/posts?userId=${id}`
     },
 
     comments: {

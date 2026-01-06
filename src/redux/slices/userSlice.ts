@@ -8,7 +8,6 @@ export type UsersSliceType = {
     loadState: boolean
 }
 
-const initialUsersState:UsersSliceType = {users:[], user: null, loadState: false};
 
 const loadUsers = createAsyncThunk(
     'usersSlice/loadUsers',
@@ -25,7 +24,7 @@ const loadUsers = createAsyncThunk(
 
 const loadUser = createAsyncThunk(
     'usersSlice/loadUser',
-    async (id: number, thunkAPI) => {
+    async (id: string, thunkAPI) => {
         try {
             const user = await servises.getUserById(id)
             return thunkAPI.fulfillWithValue(user)
@@ -34,6 +33,9 @@ const loadUser = createAsyncThunk(
         }
     }
 )
+
+const initialUsersState:UsersSliceType = {users:[], user: null, loadState: false};
+
 
 export const usersSlice = createSlice({
     name: "usersSlice",

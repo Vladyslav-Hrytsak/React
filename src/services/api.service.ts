@@ -20,14 +20,13 @@ export const servises = {
             .then((response) => response.json())
     },
 
-    getComments: async ():Promise<IComment[]> =>{
-        return await fetch(urls.comments.commentsUrl)
+    getPostById: async (id:string):Promise<IPost> =>{
+        return await fetch(urls.posts.postById(id))
             .then((response) => response.json())
     },
 
-    getPostsOfUsersById: async (id:number):Promise<IPost[]> =>{
-        return await fetch(urls.posts.userPostbyId(id))
+    getComments: async ():Promise<IComment[]> =>{
+        return await fetch(urls.comments.commentsUrl)
             .then((response) => response.json())
     }
-
 }

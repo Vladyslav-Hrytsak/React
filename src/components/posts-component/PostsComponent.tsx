@@ -7,7 +7,7 @@ import {useAppDispatch} from "../../redux/hooks/useAppDispatch.tsx";
 
 const PostsComponent= () => {
 
-    const {posts} = useAppSelector(({postsSlice}) => postsSlice);
+    const {posts, loadState} = useAppSelector(({postsSlice}) => postsSlice);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -17,6 +17,7 @@ const PostsComponent= () => {
 
     return (
         <div className="max-w-2xl mx-auto">
+            {!loadState && <div>LOADING....</div>}
             {
                 posts.map((post) => <PostComponent key={post.id} item = {post} />)
             }
