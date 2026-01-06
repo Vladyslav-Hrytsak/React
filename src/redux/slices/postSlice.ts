@@ -23,7 +23,7 @@ const loadPosts = createAsyncThunk(
 
 const initialState:PostSliceType = {posts: []};
 
-export const postSlice  = createSlice({
+export const postsSlice  = createSlice({
     name: "postSlice",
     initialState: initialState,
     reducers:{},
@@ -37,3 +37,8 @@ export const postSlice  = createSlice({
                 console.log(action)
             })
 })
+
+
+export const postsSliceActions = {
+    ...postsSlice.actions, loadPosts
+}

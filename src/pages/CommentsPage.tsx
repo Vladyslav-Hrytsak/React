@@ -1,7 +1,9 @@
+import CommentsComponent from "../components/comments-component/CommentsComponent.tsx";
+
 const CommentsPage = () => {
     return (
         <div>
-            Comments Page
+            <CommentsComponent/>
         </div>
     );
 };

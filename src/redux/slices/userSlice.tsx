@@ -22,7 +22,7 @@ const loadUsers = createAsyncThunk(
 
 const initialState:UserSliceType = {users:[]};
 
-export const userSlice = createSlice({
+export const usersSlice = createSlice({
     name: 'userSlice',
     initialState: initialState,
     reducers:{},
@@ -37,3 +37,8 @@ export const userSlice = createSlice({
 
             })
 })
+
+
+export const usersSliceActions = {
+    ...usersSlice.actions, loadUsers
+}

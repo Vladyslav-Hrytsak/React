@@ -1,12 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {userSlice} from "./slices/userSlice.tsx";
-import {postSlice} from "./slices/postSlice.ts";
+import {usersSlice} from "./slices/userSlice.tsx";
+import {postsSlice} from "./slices/postSlice.ts";
+import {commentsSlice} from "./slices/commentsSlice.ts";
 
 export const store = configureStore({
     reducer: {
-        userSlice: userSlice.reducer,
-        postSlice: postSlice.reducer,
-        commentsSlice: commentsSlice.reducer,
-        complexSlice: complexSlice.reducer,
+        userSlice: usersSlice.reducer,
+        postSlice: postsSlice.reducer,
+        commentsSlice: commentsSlice.reducer
+        // complexSlice: complexSlice.reducer,
     }
 })
